@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/my-favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/my-favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/my-favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="IThink" />
+    <link rel="manifest" href="/my-favicon/site.webmanifest" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="IThink Academy - Student Digital Portfolio. View the projects, skills, and contact information of our students.">
+    <meta name="keywords" content="IThink Academy, Portfolio, Coding for Kids, Programming Projects, Python, Web Design">
+    <meta name="author" content="IThink Academy">
+    <title>IThink Academy - Student Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="task4.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      .navbar-toggler,
+      .navbar-toggler:focus,
+      .navbar-toggler:active,
+      .navbar-toggler-icon:focus {
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+
+      * {
+        user-select: none;
+      }
+
+      img {
+        pointer-events: none;
+      }
+
+      .img-rotate {
+        transform: rotate(10deg);
+        /* Rotate by 10 degrees */
+        transition: transform 0s ease;
+        /* Optional: Adds a smooth transition effect */
+      }
+
+      .navbar {
+        background-color: #dcf0f1;
+      }
+
+      .nav-link {
+        font-size: 18px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .nav-link::before {
+        transition: 300ms;
+        height: 3px;
+        content: "";
+        position: absolute;
+        border-radius: 5px;
+        background-color: #087075;
+      }
+
+      .nav-hover::before {
+        width: 0%;
+        bottom: 10px;
+      }
+
+      .nav-hover:hover::before {
+        width: 70%;
+      }
+
+      body {
+        background-image: url("Background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow-x: hidden;
+        font-family: "Fira Sans", sans-serif;
+      }
+
+      body::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
+
+      body::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #66dce2;
+      }
+
+      #home {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #home a {
+        color: rgb(37, 35, 35);
+      }
+
+      #home p {
+        font-size: 25px;
+      }
+
+      #home i {
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      #home i:hover {
+        color: rgb(146, 146, 0);
+      }
+
+      #scrollBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+      }
+
+      #skills i {
+        height: 100px;
+        width: 100px;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #skills i:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+      }
+
+      #projects .col-lg-4 {
+        padding: 20px;
+      }
+
+      #projects .card {
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin: 10px auto;
+        cursor: pointer;
+        position: relative;
+        color: white;
+      }
+
+      #projects .card-body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        display: none;
+      }
+
+      #projects .card:hover .card-body {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      #education .education {
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: rgba(46, 223, 193, 0.5);
+      }
+
+      #education .education:hover {
+        transform: scale(1.02);
+      }
+
+      @media (max-width: 768px) {
+        #home img {
+          margin-bottom: 30px;
+          width: 200px;
+        }
+
+        #home .col-md-8 {
+          align-items: center;
+          text-align: center;
+          padding: 0px;
+        }
+
+        #home p {
+          width: 100%;
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 370px) {
+        #home h1 {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="fixed-top" data-aos="fade-down">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container"><a class="navbar-brand" href="#"><img src="signature.png" alt="signature" width="175"></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link nav-hover" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link nav-hover" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link nav-hover" href="#education">Education</a></li>
+              <li class="nav-item"><a class="nav-link nav-hover" href="#skills">Skills</a></li>
+              <li class="nav-item"><a class="nav-link nav-hover" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link nav-hover" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <div class="container row flex-wrap-reverse">
+          <div class="col-md-8 d-flex flex-column justify-content-center" data-aos="fade-right">
+            <h1 class="display-5 fw-bold mb-3">👋 Hello, I am a Student of IThink Academy</h1>
+            <p class="px-2 flex">I am <span id="typed-text"></span></p>
+            <div class="d-flex gap-3 fs-3 px-2"><A href="https://www.linkedin.com/in/ithink-academy/" class="list-group-item"><i class="fa-brands fa-linkedin"></i></a><A href="https://www.instagram.com/ithink_academy/" class="list-group-item"><i class="fa-brands fa-instagram"></i></a><a href="https://www.facebook.com/ithink.academy" class="list-group-item"><i class="fa-brands fa-facebook"></i></a><A href="https://twitter.com/ithinkacademy" class="list-group-item"><i class="fa-brands fa-twitter"></i></a></div>
+          </div>
+          <div class="col-md-4 text-center" data-aos="fade-left"><img src="TransparentLogo.svg" class="img-fluid border rounded-circle img-rotate" alt="IThink Academy student profile" loading="lazy" width="300"></div>
+        </div><button class="btn btn-dark" id="scrollBtn"><i class="fa-solid fa-arrow-up"></i></button>
+      </section>
+      <section id="about">
+        <div class="container py-5 mb-5">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" data-aos="fade-up">About IThink Academy</h1>
+          <p class="fs-5" data-aos="fade-up">IThink Academy, also known as Initializing Thinkers, is a specialized tutoring company that teaches kids how to code in a fun and interactive way. We offer beginner-friendly courses in programming, ranging from MIT's visual coding language for young learners to Python adventures and web design essentials. Our virtual meeting options cater to all learning needs, and we offer three flexible plans—Basic, Plus, and Advanced—with expert guidance and hands-on projects. At IThink Academy, we empower kids to think critically, solve problems, and create digital projects like web pages and games!</p>
+          <div class="d-flex gap-2" data-aos="fade-up"><a href="demo" class="list-group-item"><button type="button" class="btn btn-dark">My Resume</button></a><a href="#contact" class="btn btn-outline-secondary ">Contact Us</a></div>
+        </div>
+      </section>
+      <section id="education">
+        <div class="container py-5" id="featured-3">
+          <h2 class="pb-2 border-bottom border-dark" data-aos="fade-up">Education</h2>
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="col p-3">
+              <div class="education p-3 rounded" data-aos="flip-right"><i class="fa-solid fa-graduation-cap fs-2 mb-4"></i>
+                <h3 class="fs-3">Programming with Python (2024)</h3>
+                <p class="fs-5">ITHINK ACADEMY</p>
+                <p>Completed courses in Python basics, web design, and interactive game creation. Learn how to bring digital ideas to life!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills" class="py-5">
+        <h2 class="text-center mb-5" data-aos="fade-up">Skills</h2>
+        <div class="container-fluid d-flex flex-wrap gap-3 align-items-center justify-content-center display-5"><i class="fa-brands fa-html5" data-aos="zoom-in"></i><i class="fa-brands fa-css3" data-aos="zoom-in"></i><i class="fa-brands fa-js" data-aos="zoom-in"></i><i class="fa-brands fa-bootstrap" data-aos="zoom-in"></i><i class="fa-brands fa-java" data-aos="zoom-in"></i><i class="fa-brands fa-c" data-aos="zoom-in"></i><i class="fa-brands fa-python" data-aos="zoom-in"></i></div>
+      </section>
+      <section id="projects" class="py-5 my-5">
+        <h2 class="text-center" data-aos="fade-up">My Projects</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2plY3R8ZW58MHx8MHx8fDA%3D" alt="project" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">P1. My First Website</h5>
+                  <p class="card-text">This is a responsive website project built with HTML and CSS. It includes interactive elements and serves as a great introduction to web development.</p>
+                  <div class="d-flex gap-3 fs-4"><a href="https://github.com/ithinkacademy/myfirstwebsite" class="list-group-item"><i class="fa-brands fa-github"></i></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2plY3R8ZW58MHx8MHx8fDA%3D" alt="project" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">P2. Interactive Python Game</h5>
+                  <p class="card-text">A fun Python game built to teach programming concepts like loops, conditions, and user input. It demonstrates the power of Python for creating engaging projects.</p>
+                  <div class="d-flex gap-3 fs-4"><a href="https://github.com/ithinkacademy/pythoninteractivegame" class="list-group-item"><i class="fa-brands fa-github"></i></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2plY3R8ZW58MHx8MHx8fDA%3D" alt="project" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">P3. UNIT_CALCULATER</h5>
+                  <p class="card-text">"A versatile Unit Calculator that converts between Imperial and Metric units for length, weight, and volume. Features easy-to-use input fields, real-time conversion, and a dark mode toggle for a user-friendly experience."</p>
+                  <div class="d-flex gap-3 fs-4"><a href="https://github.com/KOLADIYAYASH/UNIT_CALCULATER" class="list-group-item"><i class="fa-brands fa-github"></i></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2plY3R8ZW58MHx8MHx8fDA%3D" alt="project" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">P4. Silver Oak University Website </h5>
+                  <p class="card-text">A responsive and modern website for Silver Oak University, featuring sections for About Us, Courses, Contact, and Events. The site includes a video background, dynamic animations, and a user-friendly navigation bar.</p>
+                  <div class="d-flex gap-3 fs-4"><a href="https://github.com/KOLADIYAYASH/210430100361-B.C.A-sou-25-5-22-" class="list-group-item"></a><i class="fa-brands fa-github"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2plY3R8ZW58MHx8MHx8fDA%3D" alt="project" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">P5. Flomic_Logistics_Website</h5>
+                  <p class="card-text">This project is a comprehensive and responsive website for Flomic Logistics. It showcases the company's services, portfolio, and contact information in a user-friendly and visually appealing format. Flomic Logistics Website This project is a comprehensive and responsive website for Flomic Logistics. It showcases the company's services, portfolio, and contact information in a user-friendly and visually appealing format.</p>
+                  <div class="d-flex gap-3 fs-4"><a href="https://github.com/KOLADIYAYASH/Flomic_Logistics_Website" class="list-group-item"><i class="fa-brands fa-github"></i></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card" data-aos="fade-up" data-aos-anchor-placement="center-bottom"><img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2plY3R8ZW58MHx8MHx8fDA%3D" alt="project" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">P6. BASICSWEBPAGMAINPAG</h5>
+                  <p class="card-text">This project provides a foundational guide to HTML, CSS, and JavaScript. It includes a responsive design, interactive sidebar, and utilizes Font Awesome icons. Ideal for beginners, it was created as part of a freeCodeCamp project.</p>
+                  <div class="d-flex gap-3 fs-4"><a href="https://github.com/ithinkacademy/webdesignportfolio" class="list-group-item"><i class="fa-brands fa-github"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="py-5">
+        <h2 class="text-center mb-5" data-aos="fade-up">Contact</h2>
+        <div class="container">
+          <div class="row my-5 py-5">
+            <div class="col-md-6 d-flex flex-column align-items-start justify-content-center">
+              <h1 class="display-5 fw-bold mb-3">Contact Us</h1>
+              <p class="fs-5">Prefer email? Reach out to me at <i class="fa-solid envelope"></i><a href="mailto:initiatingthinkers@gmail.com" target="_blank">InitiatingThinkers@gmail.com</a></p>
+              <p class="fs-5"><i class="fa-solid fa-phone"></i>+1 646-969-0900</p>
+            </div>
+            <div class="col-md-6">
+              <p class="fs-5" style="display: inline;">Send us a message!</p>
+              <p style="font-size: 1em; display: inline;"> (Demo) </p>
+              <form method="POST" action="#">
+                <!-- action is set to '#' to disable form submission -->
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Your name" disabled>
+                  <label for="name">Your Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="initiatingthinkers@gmail.com" disabled>
+                  <label for="email">Your Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <textarea name="message" id="message" class="form-control" placeholder="IThink Academy" disabled></textarea>
+                  <label for="message">Your message</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-success" type="submit" disabled> Send <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>undefined
+          </div>undefined
+        </div>undefined
+      </section>undefined
+    </main>undefined<footer class="bg-dark text-white py-3 text-center">undefined<p>© 2024 IThink Academy | Empowering Kids to Code!</p>undefined</footer>undefined<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>undefined<script src="https://cdn.jsdelivr.net/npm/typeit/dist/typeit.min.js"></script>undefined<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>undefined<script>
+      AOS.init();
+    </script>undefined<script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize TypeIt
+        new TypeIt("#typed-text", {
+            speed: 100, // Adjust speed as needed
+            waitUntilVisible: true,
+            loop: true
+          }).type("learning to code").pause(500).delete(16).type("building exciting projects").pause(500).delete(17).type("web pages").pause(500).delete(9).type("Games").pause(500).delete(5).type("apps!") // Final text
+          .pause(500).delete(5).go(); // Start typing
+      });
+    </script>undefined<script src="task4.js"></script>undefined<script src="demo"></script>undefined
+  </body>undefined<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const scrollBtn = document.getElementById("scrollBtn");
+      // Function to check if the user has scrolled enough to display the button
+      function toggleScrollBtn() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      }
+      // Function to scroll to the top of the page
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0
+        });
+      }
+      // Add scroll event listener to the window
+      window.addEventListener("scroll", toggleScrollBtn);
+      // Add click event listener to the scroll button
+      scrollBtn.addEventListener("click", scrollToTop);
+      // Initially hide the scroll button on page load
+      toggleScrollBtn();
+    });
+  </script>undefined
+</html>
