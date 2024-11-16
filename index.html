@@ -174,7 +174,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: left;
       }
 
       /* Responsive Adjustments */
@@ -219,6 +218,7 @@
       }
 
       .learn-more-btn {
+        margin: 0 auto;
         background-color: #42a5f5;
         color: #fff;
         padding: 10px 15px;
@@ -229,6 +229,8 @@
         text-decoration: none;
         display: inline-block;
         transition: background-color 0.3s;
+        cursor: pointer;
+        /* Pointer cursor on the button */
       }
 
       .learn-more-btn:hover {
@@ -249,6 +251,16 @@
         color: #b0b0b0;
         /*padding: 5px;*/
         margin-bottom: 0;
+      }
+
+      /* Ensure that all 
+								<a> tags do not have underlines */
+      .course-card a {
+        text-decoration: none;
+        color: inherit;
+        /* Keeps the text color from being overridden */
+        cursor: default;
+        /* Normal cursor on the course card */
       }
     </style>
   </head>
@@ -272,40 +284,52 @@
       </div>
       <div class="course-list">
         <div class="course-card">
-          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/MIT.png" alt="MIT's Visual Coding" class="course-image" />
-          <h2 class="course-title">MIT's Visual Coding Language for Kids</h2>
-          <p class="course-description">Unlock the world of coding with a visual programming language designed by MIT. Perfect for young beginners, this course encourages creativity through building games and animations while teaching problem-solving and foundational coding skills.</p>
-          <a href="Scratch.html" class="learn-more-btn">Learn More</a>
+          <a href="Scratch.html">
+            <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/MIT.png" alt="MIT's Visual Coding" class="course-image" />
+            <h2 class="course-title">MIT's Visual Coding Language for Kids</h2>
+            <p class="course-description">Unlock the world of coding with a visual programming language designed by MIT. Perfect for young beginners, this course encourages creativity through building games and animations while teaching problem-solving and foundational coding skills.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </a>
         </div>
         <div class="course-card">
-          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/python.png" alt="Python Adventures" class="course-image" />
-          <h2 class="course-title">Python Adventures</h2>
-          <p class="course-description">Start a journey into Python, one of the world’s most popular programming languages. Through interactive exercises and beginner-friendly projects, students will gain hands-on experience with coding, tailored specifically for young learners.</p>
-          <a href="Python.html" class="learn-more-btn">Learn More</a>
+          <a href="Python.html">
+            <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/python.png" alt="Python Adventures" class="course-image" />
+            <h2 class="course-title">Python Adventures</h2>
+            <p class="course-description">Start a journey into Python, one of the world’s most popular programming languages. Through interactive exercises and beginner-friendly projects, students will gain hands-on experience with coding, tailored specifically for young learners.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </a>
         </div>
         <div class="course-card">
-          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/Webdev.png" alt="Web Design Essentials" class="course-image" />
-          <h2 class="course-title">Web Design Essentials</h2>
-          <p class="course-description">Dive into web development basics, mastering HTML and CSS to build and style your own website. This course gives kids the tools to bring their ideas to life, introducing them to the essential building blocks of the web.</p>
-          <a href="web-design-essentials.html" class="learn-more-btn">Learn More</a>
+          <a href="web-design-essentials.html">
+            <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/Webdev.png" alt="Web Design Essentials" class="course-image" />
+            <h2 class="course-title">Web Design Essentials</h2>
+            <p class="course-description">Dive into web development basics, mastering HTML and CSS to build and style your own website. This course gives kids the tools to bring their ideas to life, introducing them to the essential building blocks of the web.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </a>
         </div>
         <div class="course-card">
-          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/OnlineSaftey.png" alt="Online Safety for Kids" class="course-image" />
-          <h2 class="course-title">Online Safety for Kids</h2>
-          <p class="course-description">Learn the fundamentals of staying safe online. This course covers essential topics on privacy, safe browsing, and responsible digital behavior, helping students navigate the digital world securely and confidently.</p>
-          <a href="online-safety-for-kids.html" class="learn-more-btn">Learn More</a>
+          <a href="online-safety-for-kids.html">
+            <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/OnlineSaftey.png" alt="Online Safety for Kids" class="course-image" />
+            <h2 class="course-title">Online Safety for Kids</h2>
+            <p class="course-description">Learn the fundamentals of staying safe online. This course covers essential topics on privacy, safe browsing, and responsible digital behavior, helping students navigate the digital world securely and confidently.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </a>
         </div>
         <div class="course-card">
-          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/DigitalPortfolio.png" alt="Digital Portfolio Creation" class="course-image" />
-          <h2 class="course-title">Digital Portfolio Creation</h2>
-          <p class="course-description">Build a digital portfolio to showcase your projects and skills. This course guides students through organizing and presenting their work online, making it easier to share their achievements with friends, family, and future educators.</p>
-          <a href="digital-portfolio-creation.html" class="learn-more-btn">Learn More</a>
+          <a href="digital-portfolio-creation.html">
+            <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/DigitalPortfolio.png" alt="Digital Portfolio Creation" class="course-image" />
+            <h2 class="course-title">Digital Portfolio Creation</h2>
+            <p class="course-description">Build a digital portfolio to showcase your projects and skills. This course guides students through organizing and presenting their work online, making it easier to share their achievements with friends, family, and future educators.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </a>
         </div>
         <div class="course-card">
-          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/Tutoring.png" alt="Private Tutoring" class="course-image" />
-          <h2 class="course-title">Private Tutoring in Programming</h2>
-          <p class="course-description">Get one-on-one guidance with custom-tailored programming lessons. Whether you’re interested in a specific language, topic, or project, our private tutoring sessions are designed to meet your individual goals and help you thrive.</p>
-          <a href="Private.html" class="learn-more-btn">Learn More</a>
+          <a href="Private.html">
+            <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/CourseThumbnails/Tutoring.png" alt="Private Tutoring" class="course-image" />
+            <h2 class="course-title">Private Tutoring in Programming</h2>
+            <p class="course-description">Get one-on-one guidance with custom-tailored programming lessons. Whether you’re interested in a specific language, topic, or project, our private tutoring sessions are designed to meet your individual goals and help you thrive.</p>
+            <button class="learn-more-btn">Learn More</button>
+          </a>
         </div>
       </div>
     </div>
