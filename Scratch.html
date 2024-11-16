@@ -112,47 +112,123 @@
         text-decoration: none;
       }
 
-      .courses-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        /* Single column by default */
-        grid-gap: 20px;
-        justify-items: center;
-        /* Centers the items horizontally */
+      /* Hero Section */
+      #hero-image {
+        height: 50vh;
+        background-image: url("https://github.com/IThinkAcademy/Resources/blob/main/Course%20Resources/kid-blocks.png?raw=true");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        /* Aligns the items to the top */
-        margin: 0 auto;
-        /* Centers the grid container */
-        max-width: 900px;
-        /* Maximum width */
+        text-align: center;
       }
 
-      .course-box {
-        background-color: rgba(20, 36, 55, 0.7);
-        /* Semi-transparent background */
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        text-align: left;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        max-width: 350px;
-        width: 100%;
-        margin: 0 auto;
-        /* Center-align the boxes */
+      #hero-image h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        font-family: "Playfair Display", serif;
+        color: #fff;
+        font-weight: bold;
+        background-color: rgba(45, 70, 108, 0.7);
+        padding: 10px;
+        border-radius: 15px;
       }
 
-      .course-box:hover {
+      #hero-image p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        margin-top: -10px;
+        background-color: rgba(45, 70, 108, 0.7);
+        padding: 10px;
+        border-radius: 0 0 15px 15px;
+      }
+
+      .contactbtn {
+        background-color: #2b6be2;
+        color: #e6f4ff;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1.2em;
+        transition: all 0.3s ease;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 45px;
+      }
+
+      .contactbtn:hover {
+        background-color: #004ca3;
+        color: #fff;
+      }
+
+      /* Row and Column for Courses */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 40px 20px;
+      }
+
+      .column {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .column:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
       }
 
-      /* Media Query for Large Screens: 2 columns layout */
-      @media (min-width: 768px) {
-        .courses-grid {
-          grid-template-columns: repeat(2, 1fr);
-          /* Two columns on larger screens */
+      .column img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .column h4 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #3D9AFF;
+      }
+
+      .column p {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #cccccc;
+      }
+
+      /* Mobile Optimization */
+      @media (max-width: 768px) {
+        .row {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .column {
+          max-width: 100%;
+          margin-bottom: 20px;
+        }
+
+        #hero-image h1 {
+          font-size: 2em;
+        }
+
+        #hero-image p {
+          font-size: 1em;
         }
       }
+
+      /* Center the button outside of the row section */
+      #contact-button {
+        text-align: center;
+      }
+
     </style>
   </head>
   <body>
@@ -168,41 +244,55 @@
       <a href="index.html#pricing-">Pricing</a>
       <a href="index.html#contact-">Contact Us</a>
     </nav>
-    <section id="courses" style="padding: 60px 40px; text-align: center;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 3em; color: #99daff; margin-bottom: 30px;">MITS Visual Coding Language for Kids</h2>
-      <p style="font-size: 1.2em; max-width: 900px; margin: 0 auto 40px; line-height: 1.8; color: #e0f7fa;">MITS Visual Coding Language is a fun and interactive way for kids to start learning how to code. Designed for young learners, it uses a visual programming interface that allows students to create programs by arranging graphical blocks instead of typing lines of code. This makes learning to code accessible and engaging for children, helping them build logical thinking skills and creativity.</p>
-      <p style="font-size: 1.2em; max-width: 900px; margin: 0 auto 40px; line-height: 1.8; color: #e0f7fa;">With MITS Visual Coding, kids can build their own interactive stories, games, and animations while learning the fundamental concepts of programming such as loops, variables, and conditionals. The blocks represent different commands and functions, and students can visually connect them to create their own logic without the need to write complex code.</p>
-      <!-- Grid Section with Adjusted Gap and Responsive Layout -->
-      <div class="courses-grid" style="max-width: 900px;">
-        <div class="course-box">
-          <h3 style="font-family: 'Playfair Display', serif; color: #99daff; font-size: 1.8em;">Introduction to Visual Coding</h3>
-          <p style="color: #e0f7fa; font-size: 1.1em; max-width: 400px;">This course introduces young learners to the world of programming through a visual interface. Students will learn basic coding concepts, such as sequencing, loops, and conditionals, by arranging and connecting blocks on the screen.</p>
+
+    <!-- Hero Section -->
+    <section id="hero-image">
+      <h1>MIT'S Visual Coding Language</h1>
+      <p>Learn Coding the Fun Way with Visual Programming!</p>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="start">
+      <div class="row">
+        <div class="column">
+          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/Course Resources/Blocks.png" alt="Kid creating code blocks for Introduction to Visual Coding">
+          <h4>Introduction to Visual Coding</h4>
+          <p>This course introduces young learners to programming through a visual interface, teaching sequencing, loops, and conditionals by arranging blocks.</p>
         </div>
-        <div class="course-box">
-          <h3 style="font-family: 'Playfair Display', serif; color: #99daff; font-size: 1.8em;">Creating Interactive Stories</h3>
-          <p style="color: #e0f7fa; font-size: 1.1em; max-width: 400px;">In this course, kids will use visual coding to create interactive stories where characters can talk, move, and react to choices made by the player. They'll learn how to implement logic and interactions while having fun with their stories.</p>
+        <div class="column">
+          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/Course Resources/Book.png">
+          <h4>Interactive Stories</h4>
+          <p>Kids can create stories where characters talk, move, and respond to player choices, all while learning logic and interactions.</p>
         </div>
-        <div class="course-box">
-          <h3 style="font-family: 'Playfair Display', serif; color: #99daff; font-size: 1.8em;">Building Simple Games</h3>
-          <p style="color: #e0f7fa; font-size: 1.1em; max-width: 400px;">Students will learn how to design and program their own simple video games. They'll explore how to use visual blocks to create game mechanics, design characters, and animate objects within the game world.</p>
+        <div class="column">
+          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/Course Resources/Controller.png" alt="Building simple games with code">
+          <h4>Building Simple Games</h4>
+          <p>Students design their own games, creating game mechanics, characters, and animations using visual coding blocks.</p>
         </div>
-        <div class="course-box">
-          <h3 style="font-family: 'Playfair Display', serif; color: #99daff; font-size: 1.8em;">Creative Animations</h3>
-          <p style="color: #e0f7fa; font-size: 1.1em; max-width: 400px;">This course helps kids create animations by using visual coding blocks to control movements and actions. It's a fun way to learn the basics of animation while expressing creativity through technology.</p>
+        <div class="column">
+          <img src="https://raw.githubusercontent.com/IThinkAcademy/Resources/refs/heads/main/Course Resources/Pencil.png">
+          <h4>Creative Animations</h4>
+          <p>Create animations by controlling movements and actions with coding blocks, combining creativity and technology.</p>
         </div>
-      </div>
-      <!-- Contact Us Button -->
-      <div style="margin-top: 50px; margin-bottom: -20px;">
-        <a href="/contact" style="background-color: #2354ab; color: #fff; font-size: 1.2em; padding: 15px 30px; border-radius: 8px; text-decoration: none; display: inline-block; transition: background-color 0.3s ease, transform 0.3s ease;"> Contact Us Now </a>
       </div>
     </section>
+
+    <div id="courses" style="padding: 60px; text-align: center;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 3em; color: #99daff; margin-bottom: 30px;">MITS Visual Coding Language for Kids</h2>
+      <p style="font-size: 1.2em; max-width: 900px; margin: 0 auto 40px; line-height: 1.8; color: #e0f7fa;">MITS Visual Coding Language is a fun and interactive way for kids to start learning how to code. Designed for young learners, it uses a visual programming interface that allows students to create programs by arranging graphical blocks instead of typing lines of code. This makes learning to code accessible and engaging for children, helping them build logical thinking skills and creativity.</p>
+      <p style="font-size: 1.2em; max-width: 900px; margin: 0 auto; line-height: 1.8; color: #e0f7fa;">With MITS Visual Coding, kids can build their own interactive stories, games, and animations while learning the fundamental concepts of programming such as loops, variables, and conditionals. The blocks represent different commands and functions, and students can visually connect them to create their own logic without the need to write complex code.</p>
+    </div>
+
+    <!-- Contact Button Section -->
+    <div id="contact-button">
+      <a class="contactbtn" href="/Contact">Contact Us</a>
+    </div>
+
     <footer>
-      <w>Contact Us: <a href="mailto:initiatingthinkers@gmail.com" style="color: #e0f7fa; text-decoration: none;">InitiatingThinkers@gmail.com</a>
-      </w>
+      <w>Contact Us: <a href="mailto:initiatingthinkers@gmail.com" style="color: #e0f7fa; text-decoration: none;">InitiatingThinkers@gmail.com</a></w>
       <p>Follow us on social media for updates and new content!</p>
     </footer>
-  </body>
-  <script>
+    <script>
     const canvas = document.getElementById('backgroundCanvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
