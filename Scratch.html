@@ -40,6 +40,7 @@
       }
 
       header {
+        user-select: none;
         background: linear-gradient(to bottom, #1e88e5, #0b365b);
         padding: 13.4px;
         text-align: center;
@@ -62,6 +63,7 @@
       }
 
       nav {
+        user-select: none;
         display: flex;
         justify-content: center;
         background-color: #004ca3;
@@ -177,8 +179,15 @@
         flex: 1;
         padding: 20px;
         text-align: center;
+        background-color: rgba(20, 36, 55, 0.9);
+        border-radius: 25px;
+        margin-right: 20px; /* Adds space between columns */
       }
       
+      .column:last-child {
+        margin-right: 0; /* Removes the margin from the last column */
+      }
+            
       .column:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
@@ -189,6 +198,8 @@
         width: 150px;
         border-radius: 50%;
         margin-bottom: 10px;
+        user-select: none;
+        pointer-events: none; 
       }
 
       .column h4 {
